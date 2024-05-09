@@ -1,0 +1,42 @@
+package difference_objects_classes;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of the Employee class
+        Employee employee1 = new Employee("Brandon", 26);
+        Employee employee2 = new Employee("Jazmin", 23);
+
+        // Using methods of the Employee class to show information about the Employees
+        System.out.println("Employee 1: " + employee1);
+        System.out.println("Employee 2: " + employee2);
+        //Demonstrating Classes and Objects are not the same
+        // Showing that objects maintain their own state
+        System.out.println("Making changes... ");
+        // Modifying age
+        // Employee 1's age remains unchanged, Employee 2's age changes
+        employee2.updateAge(24);
+        System.out.println("Updated Employee 1: " + employee1 + " (No changes..)");
+        System.out.println("Updated Employee 2: " + employee2 + " Happy Birthday!");
+    }
+}
+
+// Definition of the Employee class
+class Employee {
+    private String name;
+    private int age;
+
+    // Constructor to initialize an Employee object
+    public Employee(String employeeName, int employeeAge) {
+        this.name = employeeName;
+        this.age = employeeAge;
+    }
+    // Method to retrieve name and age
+    public String toString() {
+        return "Name: " + name + ", Age: " + age;
+    }
+
+    // Method to update the age of the employee
+    public void updateAge(int newAge) {
+        this.age = newAge;
+    }
+}
